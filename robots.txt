@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wovencornwall.com/sitemap.xml
