@@ -17,12 +17,14 @@ It's a plain website (HTML pages, one stylesheet, photos), hosted free on GitHub
 | `thanks.html` | Page shown after someone sends an enquiry |
 | `404.html` | Page shown for a broken link |
 | `styles.css` | All colours, fonts and layout |
-| `thread.js` | The faint terracotta thread that draws as you scroll |
+| `thread.js` | The faint stitched thread that draws as you scroll |
 | `img/` | Photos |
 | `logo.png` | Zoë's handwritten "Woven" logo |
 | `CNAME` | Tells GitHub the site lives at wovencornwall.com |
 
-Brand colours (in `styles.css`): cream `#FAF8F5`, off-white `#F5F1ED`, warm grey `#D4CEC7`, terracotta `#C97A6D`, text brown `#533835`.
+Brand colours (in `styles.css`): linen `#F3F0E6`, deeper linen `#E8E4D4`, sage thread `#A3A183`, olive `#5F6040`, wax `#737153`, olive ink `#3B3C2A`.
+
+The homepage opens with a sealed envelope the first time someone visits in a browser session. Tapping the seal opens it; "Enter the site" skips it. Visitors who have reduced motion switched on go straight in.
 
 ## The enquiry form
 

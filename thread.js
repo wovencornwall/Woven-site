@@ -1,5 +1,5 @@
 /* WOVEN — the thread.
-   A fine thread underlines the word "woven", runs down out of the hero photo,
+   A fine stitched thread underlines the word "woven", runs down out of the hero photo,
    then drifts faintly down the page behind the content, drawing itself as you scroll.
    Every position is measured relative to the element the drawing sits in, so the
    underline always lands exactly under the word. */
@@ -72,8 +72,12 @@
 
     pageSvg = el("svg", { "class": "thread-svg", "aria-hidden": "true", width: W, height: H, viewBox: "0 0 " + W + " " + H });
     pageSvg.appendChild(fade("threadFade", start[1], start[1] + 900, overlay ? [["0", ".5"], [".3", ".22"], ["1", ".12"]] : [["0", ".9"], [".08", ".5"], [".35", ".2"], ["1", ".12"]]));
-    line = el("path", { d: smooth(pts), "class": "thread-line" });
-    pageSvg.appendChild(line);
+    // the visible thread is a row of running stitches; a solid copy in a mask reveals it as you scroll
+    var d = smooth(pts), mask = el("mask", { id: "threadReveal", maskUnits: "userSpaceOnUse", x: 0, y: 0, width: W, height: H });
+    line = el("path", { d: d, fill: "none", stroke: "#fff", "stroke-width": 4, "stroke-linecap": "round" });
+    mask.appendChild(line);
+    pageSvg.querySelector("defs").appendChild(mask);
+    pageSvg.appendChild(el("path", { d: d, "class": "thread-line", mask: "url(#threadReveal)" }));
     body.appendChild(pageSvg);
 
     len = line.getTotalLength();
