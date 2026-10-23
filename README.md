@@ -12,7 +12,7 @@ It's a plain website (HTML pages, one stylesheet, photos), hosted free on GitHub
 | `about.html` | About Zoë |
 | `philosophy.html` | Philosophy and values |
 | `services.html` | Wedding packages and social content for brands |
-| `journal.html` | Journal posts |
+| `journal.html` | Journal (empty and left out of the menus until the first post) |
 | `contact.html` | Enquiry form |
 | `terms.html` | Terms of booking and privacy notice |
 | `thanks.html` | Page shown after someone sends an enquiry |
