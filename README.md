@@ -17,12 +17,12 @@ It's a plain website (HTML pages, one stylesheet, photos), hosted free on GitHub
 | `thanks.html` | Page shown after someone sends an enquiry |
 | `404.html` | Page shown for a broken link |
 | `styles.css` | All colours, fonts and layout |
-| `tex/` | The embroidered logo: linen swatch for the homepage, sage version for the header, W monogram for the footer and icons |
+| `tex/` | The logo: the love-knot W woven in sage onto a linen patch (large and small), and the W alone for icons |
 | `img/` | Photos |
 | `logo.png` | Zoë's handwritten "Woven" logo |
 | `CNAME` | Tells GitHub the site lives at wovencornwall.com |
 
-Brand colours (in `styles.css`): light beige `#F6F2EB`, deeper beige `#EDE6DA`, hairlines `#DCD3C4`, earthy ink `#3A352E`, deep sage accent `#4E5A47`. Type: Bodoni Moda capitals for headings, italics for prices and asides, EB Garamond for text. Photos and buttons have rounded corners. The logo is an original W monogram (two threads interlacing) above Zoë's handwritten name, embroidered.
+Brand colours (in `styles.css`): cream `#FAF8F5`, off-white `#F3EEE7`, warm grey `#D4CEC7`, earthy ink `#2F2B26`, deep sage accent `#4E5A47`. Type: Cormorant Garamond for headings, EB Garamond for text, all serif. Photos and buttons have rounded corners. The logo is a love-knot W (one woven band with a heart where the middle strokes cross) on a linen patch, with WEDDING PLANNER beneath.
 
 
 ## The enquiry form
