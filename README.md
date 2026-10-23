@@ -29,9 +29,9 @@ Brand colours (in `styles.css`): cream `#FAF8F5`, off-white `#F3EEE7`, warm grey
 
 ## The enquiry form
 
-Enquiries are sent to zoe@wovencornwall.com by FormSubmit (formsubmit.co), a free service that needs no account.
+Enquiries are sent to zoe@wovencornwall.com by Web3Forms (web3forms.com), a free service (250 enquiries a month) that needs no account.
 
-The very first time someone sends the form, FormSubmit emails zoe@wovencornwall.com asking to confirm. Click the confirm link once, and every enquiry after that arrives straight in the inbox. Send a test enquiry yourself as soon as the site is live so this happens before a real couple writes in.
+The form in `contact.html` carries an access key that Web3Forms emailed to zoe@wovencornwall.com. The key is meant to be public, so it's fine in the page. To change which address enquiries go to, create a new key at web3forms.com for that address and swap it into the `access_key` line. After sending, couples land on `thanks.html`.
 
 ## Putting it live
 

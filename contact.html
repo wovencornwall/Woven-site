@@ -49,12 +49,12 @@
       <a class="contact-detail" href="mailto:zoe@wovencornwall.com">zoe@wovencornwall.com</a>
       <p>Based in Cornwall, happy to travel.</p>
     </div>
-    <form id="enquiry" action="https://formsubmit.co/zoe@wovencornwall.com" method="POST">
-      <input type="hidden" name="_subject" value="New WOVEN enquiry">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://wovencornwall.com/thanks.html">
-      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <form id="enquiry" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="New WOVEN enquiry">
+      <input type="hidden" name="from_name" value="WOVEN website">
+      <input type="hidden" name="redirect" value="https://wovencornwall.com/thanks.html">
+      <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field"><label for="f-name">Your names</label><input id="f-name" name="name" autocomplete="name" required></div>
       <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
       <div class="field"><label for="f-date">Date (if you have one)</label><input id="f-date" name="date" placeholder="e.g. 17 July 2027"></div>
