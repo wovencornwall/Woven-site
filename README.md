@@ -17,12 +17,12 @@ It's a plain website (HTML pages, one stylesheet, photos), hosted free on GitHub
 | `thanks.html` | Page shown after someone sends an enquiry |
 | `404.html` | Page shown for a broken link |
 | `styles.css` | All colours, fonts and layout |
-| `tex/` | Paper stocks, deckled edges, the embossed logo and the wax seal |
+| `tex/` | Paper and linen textures, deckled edges, the embroidered linen swatch and woven label, and the wax seal |
 | `img/` | Photos |
 | `logo.png` | Zoë's handwritten "Woven" logo |
 | `CNAME` | Tells GitHub the site lives at wovencornwall.com |
 
-Brand colours (in `styles.css`): light beige cotton `#EEE7DA`, oat `#E3D9C7`, card stock `#F4EFE5`, sand `#CFC3AD`, deep sage `#4E5A47`, earthy ink `#3A352E`. Type: Bodoni Moda for headings, EB Garamond for text.
+Brand colours (in `styles.css`): light beige cotton `#EEE7DA`, oat `#E3D9C7`, card stock `#F4EFE5`, sand `#CFC3AD`, deep sage `#4E5A47`, earthy ink `#3A352E`. Type: Bodoni Moda capitals for headings and italics for prices and asides, EB Garamond for text. The logo appears as Zoë's handwriting embroidered in cream thread on a linen swatch (`tex/swatch-*.webp`).
 
 The homepage arrives as a sealed gatefold the first time someone visits in a browser session. Tapping the seal breaks it and the two leaves open; "Enter without opening" skips it. Visitors who have reduced motion switched on go straight in.
 

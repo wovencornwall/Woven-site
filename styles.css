@@ -1,13 +1,14 @@
-/* WOVEN — paper, wax and ink.
-   Layout: a stationery suite laid on a table. Cotton paper throughout, deeper oat stock for bands torn
-   along a deckled edge, photographs as bordered prints, every page closed with a sealed note. */
+/* WOVEN — linen, thread, paper and wax.
+   Layout: a calm, centred editorial page in the manner of a boutique planner's site. Capitals for
+   headings, italics for prices and asides, photographs whole on cotton mounts. The brand itself is
+   a cream linen swatch embroidered with Zoë's handwriting, laid on deep sage linen. */
 :root{
-  --paper:#EEE7DA;        /* light beige cotton */
-  --oat:#E3D9C7;          /* deeper oat stock */
-  --cotton:#F4EFE5;       /* card stock */
+  --paper:#EEE7DA;        /* light beige cotton paper, the page */
+  --oat:#E3D9C7;          /* deeper oat stock for alternate bands */
+  --cotton:#F4EFE5;       /* photo mounts and cards */
   --sand:#CFC3AD;         /* hairlines */
   --sage:#4E5A47;         /* deep sage, the accent */
-  --sage-deep:#465241;    /* sage paper base */
+  --sage-deep:#485441;    /* sage linen */
   --on-sage:#ECE5D6;
   --ink:#3A352E;          /* earthy ink */
   --ink-soft:#6A6256;
@@ -17,84 +18,81 @@
   --tex-paper:url(tex/paper.jpg);
   --tex-oat:url(tex/paper-oat.jpg);
   --tex-cotton:url(tex/paper-cotton.jpg);
-  --tex-sage:url(tex/paper-sage.jpg);
+  --tex-linen:url(tex/linen.jpg);
+  --tex-sage:url(tex/linen-sage.jpg);
+  --gutter:max(20px,env(safe-area-inset-left,0px));
+  --gutter-r:max(20px,env(safe-area-inset-right,0px));
   color-scheme:light;
 }
-/* This is printed stationery: one deliberate light look in both themes. */
+/* Printed and embroidered stationery: one deliberate light look in both themes. */
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01s!important;animation-duration:.01s!important}}
 body{margin:0;background:var(--paper) var(--tex-paper) 0 0/512px 512px repeat;color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.65;
-  padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px));overflow-x:hidden;text-rendering:optimizeLegibility}
-.wrap{max-width:1200px;margin-inline:auto}
+  padding-left:var(--gutter);padding-right:var(--gutter-r);overflow-x:hidden;text-rendering:optimizeLegibility}
+.wrap{max-width:1180px;margin-inline:auto}
 .narrow{max-width:700px;margin-inline:auto}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:1px solid var(--sage);outline-offset:4px}
 p{margin:0}
 
-/* ---------- type ---------- */
-h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;color:var(--ink);font-optical-sizing:auto;
-  text-shadow:0 1px 0 rgba(255,255,255,.5)}
-h1{font-size:clamp(2.5rem,5.4vw,4.5rem);line-height:1.04;letter-spacing:-.012em}
-h2{font-size:clamp(2rem,3.9vw,3.15rem);line-height:1.08;letter-spacing:-.01em}
-h3{font-size:1.35rem;line-height:1.2}
-h1 em,h2 em{font-style:italic;color:var(--sage)}
-.engraved{font-family:var(--display);font-size:.68rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--sage);margin:0;line-height:1.6}
+/* ---------- type: capitals for headings, italics for asides ---------- */
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;color:var(--ink);text-transform:uppercase;letter-spacing:.05em}
+h1{font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.12}
+h2{font-size:clamp(1.7rem,3.6vw,2.7rem);line-height:1.14}
+h3{font-size:1.05rem;line-height:1.3;letter-spacing:.14em}
+.sub{font-family:var(--display);font-style:italic;text-transform:none;letter-spacing:0;font-size:clamp(1.1rem,2vw,1.35rem);color:var(--ink-soft)}
+.engraved,.eyebrow{font-family:var(--display);font-size:.68rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--sage);margin:0;line-height:1.6}
 .engraved.ink{color:var(--ink-soft)}
-.lede{font-size:1.18rem;color:var(--ink-soft);max-width:38ch}
+.lede{font-size:1.18rem;color:var(--ink-soft);max-width:40ch}
 .muted{color:var(--ink-soft)}
-.rule{display:block;width:44px;height:1px;background:var(--sage);border:0;margin:0;opacity:.6}
+.price{font-family:var(--display);font-style:italic;color:var(--sage)}
 
-/* ---------- masthead ---------- */
-header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px 32px;padding-block:28px 22px;border-bottom:1px solid rgba(78,90,71,.22)}
-.logo{display:block;text-decoration:none}
-.logo-mark{display:block;aspect-ratio:2/1;background:var(--ink);-webkit-mask:url(logo.png) center/contain no-repeat;mask:url(logo.png) center/contain no-repeat}
-header .logo{width:148px;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6))}
+/* ---------- masthead: the woven label stitched on, menu either side ---------- */
+header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px 36px;padding-block:22px 18px}
+.label{display:block;width:156px;filter:drop-shadow(0 1px 1px rgba(var(--shadow),.18)) drop-shadow(0 6px 10px rgba(var(--shadow),.16));transition:transform .4s}
+.label:hover{transform:rotate(-1.2deg)}
+.label img{width:100%}
 header nav{display:flex;gap:10px 34px;flex-wrap:wrap}
 .nav-right{justify-content:flex-end}
-header nav a{font-family:var(--display);font-size:.66rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);padding-block:6px;transition:color .3s}
+header nav a{font-family:var(--display);font-size:.68rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);padding-block:6px;transition:color .3s}
 header nav a:hover,header nav a[aria-current="page"]{color:var(--ink)}
 header nav a[aria-current="page"]{box-shadow:inset 0 -1px 0 var(--sage)}
 header nav a.cta{color:var(--sage)}
 @media (max-width:780px){
-  header{grid-template-columns:1fr;justify-items:center;padding-block:22px 14px;gap:10px}
-  header .logo{grid-row:1;width:124px}
-  header nav{justify-content:center;gap:4px 22px}
+  header{grid-template-columns:1fr;justify-items:center;padding-block:18px 10px;gap:8px}
+  .label{grid-row:1;width:126px}
+  header nav{justify-content:center;gap:2px 22px}
   .nav-left{grid-row:2}.nav-right{grid-row:3}
 }
 
-/* ---------- buttons ---------- */
-.btn{display:inline-block;font-family:var(--display);font-size:.68rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;
-  padding:18px 34px;border:1px solid var(--sage);color:var(--sage);background:transparent;cursor:pointer;transition:background-color .35s,color .35s;white-space:nowrap}
-.btn:hover{background-color:rgba(78,90,71,.08)}
-.btn.solid{background:var(--sage-deep) var(--tex-sage) 0 0/512px repeat;border-color:var(--sage-deep);color:var(--on-sage);box-shadow:0 1px 0 rgba(255,255,255,.4),0 6px 14px -8px rgba(var(--shadow),.6)}
-.btn.solid:hover{background-color:var(--ink);filter:brightness(.92)}
-.textlink{font-family:var(--display);font-size:.66rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--sage);padding-bottom:5px;box-shadow:inset 0 -1px 0 rgba(78,90,71,.45);transition:box-shadow .3s;justify-self:start}
+/* ---------- buttons: quiet, lowercase, italic ---------- */
+.btn{display:inline-block;font-family:var(--display);font-style:italic;font-size:1.05rem;letter-spacing:.02em;text-decoration:none;
+  padding:14px 34px 15px;border:1px solid var(--sage);color:var(--sage);background:transparent;cursor:pointer;transition:background-color .35s,color .35s}
+.btn:hover{background:var(--sage);color:var(--on-sage)}
+.btn.solid{background:var(--sage-deep) var(--tex-sage) 0 0/512px repeat;border-color:var(--sage-deep);color:var(--on-sage)}
+.btn.solid:hover{filter:brightness(.9)}
+.textlink{font-family:var(--display);font-style:italic;font-size:1.05rem;text-decoration:none;color:var(--sage);padding-bottom:3px;box-shadow:inset 0 -1px 0 rgba(78,90,71,.45);transition:box-shadow .3s;justify-self:start}
 .textlink:hover{box-shadow:inset 0 -1px 0 var(--sage)}
 
 /* ---------- materials ---------- */
-section{padding-block:clamp(80px,11vw,140px);position:relative}
-/* deeper oat stock, torn along the top and bottom */
-.band{background:var(--oat) var(--tex-oat) 0 0/512px repeat;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px))) calc(-1 * max(20px,env(safe-area-inset-right,0px)));
-  padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px));margin-block:48px}
-.band::before,.band::after{content:"";position:absolute;left:0;right:0;height:48px;background:inherit;pointer-events:none}
-.band::before{top:-47px;background-position:0 47px;-webkit-mask:url(tex/deckle-top.png) 0 0/2048px 48px repeat-x;mask:url(tex/deckle-top.png) 0 0/2048px 48px repeat-x}
-.band::after{bottom:-47px;-webkit-mask:url(tex/deckle-bottom.png) 0 0/2048px 48px repeat-x;mask:url(tex/deckle-bottom.png) 0 0/2048px 48px repeat-x}
-
-/* a photograph printed with a cotton border */
-.print{margin:0;background:var(--cotton) var(--tex-cotton) 0 0/400px repeat;padding:clamp(8px,1.1vw,14px);position:relative;
+section{padding-block:clamp(72px,10vw,128px);position:relative}
+.full{margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter-r));padding-left:var(--gutter);padding-right:var(--gutter-r)}
+/* deeper oat stock torn along its edges */
+.band{background:var(--oat) var(--tex-oat) 0 0/512px repeat;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter-r));
+  padding-left:var(--gutter);padding-right:var(--gutter-r);margin-block:48px}
+.band::before,.band::after{content:"";position:absolute;left:0;right:0;height:48px;background:inherit;background-position:0 47px;pointer-events:none}
+.band::before{top:-47px;-webkit-mask:url(tex/deckle-top.png) 0 0/2048px 48px repeat-x;mask:url(tex/deckle-top.png) 0 0/2048px 48px repeat-x}
+.band::after{bottom:-47px;background-position:0 0;-webkit-mask:url(tex/deckle-bottom.png) 0 0/2048px 48px repeat-x;mask:url(tex/deckle-bottom.png) 0 0/2048px 48px repeat-x}
+/* a photograph on a cotton mount, always whole */
+.print{margin:0;background:var(--cotton) var(--tex-cotton) 0 0/400px repeat;padding:clamp(7px,1vw,12px);position:relative;
   box-shadow:0 1px 1px rgba(var(--shadow),.14),0 3px 6px -2px rgba(var(--shadow),.12),0 18px 34px -16px rgba(var(--shadow),.42)}
 .print img{width:100%}
-.print::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.18),transparent 40%,transparent 70%,rgba(var(--shadow),.05))}
-.print figcaption{font-style:italic;font-size:.9rem;color:var(--ink-soft);padding:10px 2px 0}
-
-/* a card of heavy stock with a torn (deckled) edge; the shadow sits on the wrapper so the torn edge casts it */
+/* a card of heavy stock with a deckled edge */
 .card-wrap{filter:drop-shadow(0 1px 1px rgba(var(--shadow),.16)) drop-shadow(0 14px 22px rgba(var(--shadow),.2))}
 .card{background:var(--cotton) var(--tex-cotton) 0 0/400px repeat;-webkit-mask-box-image:url(tex/deckle-frame.png) 24 round;mask-border:url(tex/deckle-frame.png) 24 round}
-
-/* the wax seal */
 .seal-img{width:var(--seal,96px);height:auto;pointer-events:none;user-select:none}
 
 /* ======================================================================
@@ -143,115 +141,89 @@ main,body > .wrap:first-of-type{transition:transform 2.2s cubic-bezier(.62,0,.22
 /* ======================================================================
    Home
    ====================================================================== */
-/* the suite: a bordered print with the invitation card laid over its edge */
-.suite{padding-block:clamp(44px,6vw,88px) clamp(80px,10vw,130px)}
-.suite-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:start}
-.suite .print{grid-column:1/9;grid-row:1}
-.suite .card-wrap{grid-column:8/13;grid-row:1;position:relative;z-index:2;margin-top:clamp(56px,7vw,110px);margin-left:-8%}
-.invite{display:grid;justify-items:center;text-align:center;gap:20px;padding:clamp(48px,5.5vw,76px) clamp(28px,4vw,60px) clamp(56px,6vw,84px)}
-.invite .emboss{width:min(230px,70%);margin-bottom:6px}
-.invite h1{font-size:clamp(2.3rem,4.3vw,3.7rem)}
-.invite .lede{max-width:30ch;font-size:1.12rem}
-.invite .btn{margin-top:10px}
-.invite .seal-img{--seal:92px;position:absolute;right:clamp(18px,3vw,40px);bottom:clamp(-38px,-3vw,-26px);transform:rotate(-8deg)}
-@media (max-width:900px){
-  .suite-grid{grid-template-columns:1fr}
-  .suite .print{grid-column:1;grid-row:1}
-  .suite .card-wrap{grid-column:1;grid-row:2;margin:-48px 10px 0}
+/* the swatch: cream linen embroidered with the name, laid on sage linen */
+.loom{background:var(--sage-deep) var(--tex-sage) 0 0/512px repeat;padding-block:clamp(48px,7vw,96px) clamp(56px,8vw,110px)}
+.loom::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(20,24,16,.28) 100%)}
+.swatch{position:relative;z-index:1;margin-inline:auto;width:min(100%,1080px);aspect-ratio:1400/1000;container-type:inline-size;
+  background:url(tex/swatch-wide.webp) center/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(10,14,8,.35)) drop-shadow(0 22px 34px rgba(10,14,8,.38))}
+.swatch-words{position:absolute;left:14%;right:14%;top:51%;bottom:12%;display:grid;align-content:center;justify-items:center;text-align:center;gap:2.2cqw}
+.swatch-words h1{font-style:italic;font-weight:600;font-size:2.15cqw;letter-spacing:.06em;line-height:1.3;color:#2F2B25;text-shadow:0 1px 0 rgba(255,255,255,.35)}
+.swatch-words p{font-family:var(--display);font-style:italic;font-size:1.75cqw;line-height:1.55;color:#3A352E;max-width:58ch}
+.swatch-words .where{font-size:1.65cqw;line-height:1.5}
+@media (max-width:700px){
+  .swatch{aspect-ratio:860/1240;background-image:url(tex/swatch-tall.webp);width:min(100%,520px)}
+  .swatch-words{left:12%;right:12%;top:38%;bottom:9%;gap:4.6cqw}
+  .swatch-words h1{font-size:4.4cqw}
+  .swatch-words p{font-size:4.25cqw}
+  .swatch-words .where{font-size:3.9cqw}
 }
 
-/* the opening thought */
-.statement{display:grid;gap:30px;justify-items:center;text-align:center}
-.statement h2{max-width:20ch;font-style:italic;font-size:clamp(2rem,4.2vw,3.35rem)}
-.statement p{max-width:58ch;color:var(--ink-soft)}
-.values-line{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px}
-.values-line span{font-family:var(--display);font-size:.68rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--sage)}
+/* tagline and the first photograph */
+.opening{display:grid;justify-items:center;text-align:center;gap:18px}
+.opening h2{max-width:24ch;font-size:clamp(1.8rem,4vw,3rem)}
+.opening .print{margin-top:clamp(28px,4vw,48px);width:100%}
 
-/* Zoë */
-.founder{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,7vw,110px);align-items:center}
-.founder .print{max-width:460px;justify-self:end;width:100%}
-.founder-copy{display:grid;gap:22px;min-width:0;max-width:520px}
+/* meet Zoë */
+.founder{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,7vw,104px);align-items:center}
+.founder .print{max-width:450px;justify-self:end;width:100%}
+.founder-copy{display:grid;gap:20px;min-width:0;max-width:540px}
 .founder-copy p{color:var(--ink-soft)}
-.founder-copy .textlink{margin-top:8px}
+.founder-copy .btn{justify-self:start;margin-top:12px}
+@media (max-width:900px){.founder{grid-template-columns:1fr}.founder .print{justify-self:center}}
 
-/* services, set like a dinner menu on handmade card */
-.menu-table{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
-.menu-table > .print:first-child{margin-top:clamp(60px,9vw,140px)}
-.menu-table > .print:last-child{margin-top:clamp(160px,18vw,280px)}
-.menu{display:grid;justify-items:center;text-align:center;gap:0;padding:clamp(52px,6vw,80px) clamp(26px,3.6vw,54px) clamp(52px,6vw,76px)}
-.menu h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin:16px 0 8px}
-.menu > .muted{font-style:italic;max-width:30ch}
-.course{display:grid;gap:4px;justify-items:center;padding-block:24px;width:100%}
-.course + .course{background:linear-gradient(var(--sand),var(--sand)) 50% 0/36px 1px no-repeat}
-.course:first-of-type{margin-top:22px}
-.course h3{font-family:var(--display);font-size:.84rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase}
-.course p{font-style:italic;color:var(--ink-soft);font-size:1rem;max-width:40ch}
-.course .price{font-style:normal;font-family:var(--display);font-size:.9rem;color:var(--sage);letter-spacing:.04em}
-.menu-note{font-style:italic;font-size:.92rem;color:var(--ink-soft);margin-top:10px}
-.menu .textlink{justify-self:center;margin-top:26px}
-.menu-aside{text-align:center;margin-top:clamp(40px,5vw,60px);color:var(--ink-soft);font-style:italic}
-.menu-aside a{color:var(--sage)}
-@media (max-width:960px){
-  .menu-table{grid-template-columns:1fr 1fr}
-  .menu-table .card-wrap{grid-column:1/-1;grid-row:1;max-width:560px;width:100%;justify-self:center}
-  .menu-table > .print:first-child,.menu-table > .print:last-child{margin-top:0}
-  .menu-table > .print:last-child{margin-top:48px}
-}
+/* services: five offerings, each a photograph, a name and a price */
+.services-head{display:grid;justify-items:center;text-align:center;gap:14px;margin-bottom:clamp(40px,6vw,72px)}
+.services-head h2{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:.08em}
+.offerings{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(36px,4vw,56px) clamp(22px,3vw,40px)}
+.offering{flex:0 1 calc((100% - 2 * clamp(22px,3vw,40px)) / 3);display:grid;gap:12px;justify-items:center;text-align:center;text-decoration:none;min-width:0}
+.offering .print{width:100%;margin-bottom:10px;transition:transform .5s}
+.offering:hover .print{transform:translateY(-3px) rotate(-.4deg)}
+.offering p{font-style:italic;color:var(--ink-soft);font-size:1rem;max-width:30ch}
+.services-foot{display:grid;justify-items:center;text-align:center;gap:18px;margin-top:clamp(44px,6vw,72px)}
+.services-foot .sub{max-width:34ch}
+@media (max-width:900px){.offering{flex-basis:calc((100% - clamp(22px,3vw,40px)) / 2)}}
+@media (max-width:560px){.offering{flex-basis:100%}}
 
-/* prints laid out on the table */
-.section-title{display:grid;gap:16px;justify-items:center;text-align:center;margin-bottom:clamp(44px,6vw,80px)}
-.prints{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(18px,2.6vw,36px);align-items:start}
-.prints .p1{grid-column:1/8}
-.prints .p2{grid-column:8/12;margin-top:18%}
-.prints .p3{grid-column:2/6;margin-top:-6%}
-.prints .p4{grid-column:6/13;margin-top:10%}
-.prints .p5{grid-column:3/7;margin-top:-4%}
-.prints .p6{grid-column:7/11;margin-top:6%}
-@media (max-width:760px){
-  .prints{grid-template-columns:1fr 1fr;gap:16px}
-  .prints > *{grid-column:auto!important;margin-top:0!important}
-  .prints .p1,.prints .p4{grid-column:1/-1!important}
-}
+/* a strip of moments */
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,26px);align-items:start}
+.strip .print:nth-child(even){margin-top:clamp(18px,3vw,44px)}
+@media (max-width:760px){.strip{grid-template-columns:1fr 1fr}}
 
 /* questions */
-.faq-wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(36px,6vw,96px);align-items:start}
-.faq-intro{display:grid;gap:20px}
-.faq-intro p{color:var(--ink-soft)}
-.faq{border-top:1px solid var(--sand)}
+.faq-block{display:grid;justify-items:center;gap:clamp(30px,4vw,48px)}
+.faq-block > .center{display:grid;gap:12px;justify-items:center;text-align:center}
+.faq{border-top:1px solid var(--sand);width:100%;max-width:820px}
 .faq details{border-bottom:1px solid var(--sand)}
-.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding-block:24px;font-family:var(--display);font-size:1.25rem}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding-block:22px;font-family:var(--display);font-size:1.2rem}
 .faq summary::-webkit-details-marker{display:none}
-.faq details p{color:var(--ink-soft);padding-bottom:26px;max-width:62ch}
+.faq details p{color:var(--ink-soft);padding-bottom:24px;max-width:64ch}
 .plus{width:14px;height:14px;position:relative}
 .plus::before,.plus::after{content:"";position:absolute;inset:50% 0 auto;height:1px;background:var(--sage);transition:transform .35s}
 .plus::after{transform:rotate(90deg)}
 details[open] .plus::after{transform:rotate(0)}
-@media (max-width:860px){.faq-wrap{grid-template-columns:1fr}}
+.faq-foot{display:grid;justify-items:center;gap:14px;text-align:center}
+.faq-foot .muted{font-style:italic}
+.faq-foot a[href^="mailto"]{color:var(--sage)}
 
 /* every page closes on a sealed note */
 .note-card-wrap{max-width:720px;margin-inline:auto;position:relative}
 .note-card{display:grid;justify-items:center;text-align:center;gap:22px;padding:clamp(70px,8vw,96px) clamp(26px,6vw,72px) clamp(56px,7vw,80px)}
-.note-card h2{max-width:18ch}
+.note-card h2,.note-card h1{max-width:20ch}
 .note-card p{color:var(--ink-soft);max-width:44ch}
 .note-card-wrap > .seal-img{--seal:104px;position:absolute;left:50%;top:0;transform:translate(-50%,-46%);z-index:3}
 
-/* ---------- footer on deep sage stock ---------- */
-.site-footer{background:var(--sage-deep) var(--tex-sage) 0 0/512px repeat;color:var(--on-sage);position:relative;margin-top:60px;
-  margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px))) calc(-1 * max(20px,env(safe-area-inset-right,0px)));
-  padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
-.site-footer::before{content:"";position:absolute;left:0;right:0;top:-47px;height:48px;background:inherit;background-position:0 47px;-webkit-mask:url(tex/deckle-top.png) 0 0/2048px 48px repeat-x;mask:url(tex/deckle-top.png) 0 0/2048px 48px repeat-x}
-footer{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px 56px;padding-block:72px 40px}
-footer .logo{width:132px}
-footer .logo-mark{background:var(--on-sage)}
-footer > div{display:grid;gap:12px;align-content:start;min-width:0}
-footer p,footer a{font-size:.95rem;color:rgba(236,229,214,.82)}
-footer a{text-decoration:none;transition:color .3s}
-footer a:hover{color:#fff}
-footer .engraved{color:rgba(236,229,214,.62)}
-footer a[href^="mailto"]{overflow-wrap:anywhere}
-.legal{grid-column:1/-1;padding-top:26px;border-top:1px solid rgba(236,229,214,.18);font-size:.82rem!important;letter-spacing:.04em}
-@media (max-width:860px){footer{grid-template-columns:1fr 1fr}footer > div:first-child{grid-column:1/-1}}
-@media (max-width:520px){footer{grid-template-columns:1fr}}
+/* ---------- footer on deep sage linen ---------- */
+.site-footer{background:var(--sage-deep) var(--tex-sage) 0 0/512px repeat;color:var(--on-sage);position:relative;margin-top:72px;
+  margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter-r));padding-left:var(--gutter);padding-right:var(--gutter-r);padding-bottom:env(safe-area-inset-bottom,0px)}
+.site-footer .label{width:150px;margin:0 auto;transform:translateY(-50%) rotate(-2deg);position:relative;z-index:2}
+footer{display:grid;justify-items:center;text-align:center;gap:22px;padding-bottom:40px;margin-top:-30px}
+footer .foot-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 28px}
+footer .foot-nav a{font-family:var(--display);font-size:.68rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:rgba(236,229,214,.86)}
+footer .foot-nav a:hover{color:#fff}
+footer p,footer a{font-size:.98rem;color:rgba(236,229,214,.8)}
+footer .about{font-style:italic;max-width:46ch}
+footer a[href^="mailto"]{text-decoration:none;box-shadow:inset 0 -1px 0 rgba(236,229,214,.4);overflow-wrap:anywhere}
+.legal{padding-top:22px;border-top:1px solid rgba(236,229,214,.18);font-size:.8rem!important;letter-spacing:.06em;width:100%;max-width:1180px}
 
 /* ======================================================================
    Inner pages
@@ -374,3 +346,14 @@ form .btn{justify-self:start}
   box-shadow:0 1px 1px rgba(var(--shadow),.14),0 3px 6px -2px rgba(var(--shadow),.12),0 18px 34px -16px rgba(var(--shadow),.42)}
 .page-hero + img{margin-bottom:clamp(40px,6vw,80px)}
 .thanks-note{padding-block:clamp(110px,14vw,170px)}
+.services-foot .textlink{justify-self:center}
+
+/* inner pages in the same voice: capital titles, an italic line beneath, italic prices */
+.page-hero p{font-family:var(--display);font-style:italic;font-size:clamp(1.1rem,2vw,1.3rem)}
+.page-hero h1{letter-spacing:.07em}
+.offer-name{text-transform:uppercase;letter-spacing:.12em;font-size:clamp(1.05rem,2.1vw,1.4rem)}
+.offer-price{font-style:italic;font-size:1.05rem}
+.tier-top span,.alacarte span b{font-style:italic}
+.who{font-family:var(--display)}
+article h2{font-size:clamp(1.5rem,3.2vw,2.1rem)}
+.contact-copy .print{margin-bottom:6px}
