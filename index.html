@@ -78,32 +78,46 @@
       <h2>Services</h2>
       <p class="sub">From a single conversation to walking beside you from the very start</p>
     </div>
-    <div class="offerings">
-      <a class="offering" href="services.html">
-        <figure class="print"><img src="img/sunlit-room.jpg" alt="Sunlight pouring through a sash window onto guests in a quiet sitting room" loading="lazy" width="1170" height="779"></figure>
-        <h3>The Sounding Board</h3>
-        <p class="price">£65 · one hour</p>
-      </a>
-      <a class="offering" href="services.html">
-        <figure class="print"><img src="img/terrace.jpg" alt="Two guests laughing on a sunny terrace" loading="lazy" width="1170" height="772"></figure>
-        <h3>The Finishing Touch</h3>
-        <p class="price">from £350 + travel</p>
-      </a>
-      <a class="offering" href="services.html">
-        <figure class="print"><img src="img/dinner-window.jpg" alt="Guests gathered around a candlelit dinner table" loading="lazy" width="1170" height="783"></figure>
-        <h3>The Day, Held</h3>
-        <p class="price">£650 + travel</p>
-      </a>
-      <a class="offering" href="services.html">
-        <figure class="print"><img src="img/drinks-doorway.jpg" alt="Guests chatting with drinks in a light-filled room" loading="lazy" width="1170" height="782"></figure>
-        <h3>The Full Day, Held</h3>
-        <p class="price">£950 + travel</p>
-      </a>
-      <a class="offering" href="services.html">
-        <figure class="print"><img src="img/sharing-plates.jpg" alt="Friends sharing small plates at a gathering" loading="lazy" width="1170" height="772"></figure>
-        <h3>Woven Together</h3>
-        <p class="price">from £1,500 + travel</p>
-      </a>
+    <div class="carousel" data-carousel>
+      <div class="carousel-track" tabindex="0" role="region" aria-label="Services, scroll sideways for more">
+        <a class="slide" href="services.html">
+          <figure class="print"><img src="img/sunlit-room.jpg" alt="Sunlight pouring through a sash window onto guests in a quiet sitting room" loading="lazy" width="1170" height="779"></figure>
+          <h3>The Sounding Board</h3>
+          <p class="price">£65 · one hour</p>
+          <p>An hour together on whatever is on your mind, from a decision you are stuck on to a second pair of eyes on your plans.</p>
+        </a>
+        <a class="slide" href="services.html">
+          <figure class="print"><img src="img/terrace.jpg" alt="Two guests laughing on a sunny terrace" loading="lazy" width="1170" height="772"></figure>
+          <h3>The Finishing Touch</h3>
+          <p class="price">from £350 + travel</p>
+          <p>You have chosen the details. I set them out with care, so every space feels like you before your guests walk in.</p>
+        </a>
+        <a class="slide" href="services.html">
+          <figure class="print"><img src="img/dinner-window.jpg" alt="Guests gathered around a candlelit dinner table" loading="lazy" width="1170" height="783"></figure>
+          <h3>The Day, Held</h3>
+          <p class="price">£650 + travel</p>
+          <p>From six weeks before, I become your point person, then run the day itself so you can simply be in it.</p>
+        </a>
+        <a class="slide" href="services.html">
+          <figure class="print"><img src="img/drinks-doorway.jpg" alt="Guests chatting with drinks in a light-filled room" loading="lazy" width="1170" height="782"></figure>
+          <h3>The Full Day, Held</h3>
+          <p class="price">£950 + travel</p>
+          <p>The final twelve weeks taken care of, a venue walk-round together, and the whole day from set-up to pack-down.</p>
+        </a>
+        <a class="slide" href="services.html">
+          <figure class="print"><img src="img/sharing-plates.jpg" alt="Friends sharing small plates at a gathering" loading="lazy" width="1170" height="772"></figure>
+          <h3>Woven Together</h3>
+          <p class="price">from £1,500 + travel</p>
+          <p>Someone in your corner from the moment you book: planning, suppliers, budget and design, then the day itself.</p>
+        </a>
+      </div>
+      <div class="carousel-nav">
+        <div class="carousel-progress" aria-hidden="true"><span></span></div>
+        <div class="carousel-buttons">
+          <button type="button" data-prev aria-label="Previous service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" data-next aria-label="Next service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
     </div>
     <div class="services-foot">
       <a class="btn" href="services.html">Find the right fit</a>
@@ -164,6 +178,6 @@
     </footer>
   </div>
 </div>
-<script>var yr=document.getElementById("yr");if(yr)yr.textContent=new Date().getFullYear();</script>
+<script src="site.js"></script>
 </body>
 </html>

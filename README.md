@@ -17,12 +17,13 @@ It's a plain website (HTML pages, one stylesheet, photos), hosted free on GitHub
 | `thanks.html` | Page shown after someone sends an enquiry |
 | `404.html` | Page shown for a broken link |
 | `styles.css` | All colours, fonts and layout |
-| `tex/` | The logo: the love-knot W woven in sage onto a linen patch (large and small), and the W alone for icons |
+| `site.js` | Sections fading in as you scroll, and the services carousel |
+| `tex/` | The logo: a W of flowing satin-stitch loops, embroidered in cream thread on a linen patch (large and small) |
 | `img/` | Photos |
 | `logo.png` | Zoë's handwritten "Woven" logo |
 | `CNAME` | Tells GitHub the site lives at wovencornwall.com |
 
-Brand colours (in `styles.css`): cream `#FAF8F5`, off-white `#F3EEE7`, warm grey `#D4CEC7`, earthy ink `#2F2B26`, deep sage accent `#4E5A47`. Type: Cormorant Garamond for headings, EB Garamond for text, all serif. Photos and buttons have rounded corners. The logo is a love-knot W (one woven band with a heart where the middle strokes cross) on a linen patch, with WEDDING PLANNER beneath.
+Brand colours (in `styles.css`): cream `#FAF8F5`, off-white `#F3EEE7`, warm grey `#D4CEC7`, earthy ink `#2F2B26`, deep sage accent `#4E5A47`. Type: Cormorant Garamond for headings, EB Garamond for text, all serif. Photos and buttons have rounded corners. The logo is a W made of flowing, layered satin-stitch loops woven over and under each other, in cream thread on linen, with WEDDING PLANNER beneath.
 
 
 ## The enquiry form
