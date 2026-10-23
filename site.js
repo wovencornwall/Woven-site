@@ -1,7 +1,6 @@
 /* WOVEN — gentle movement.
    Sections drift up and fade in as they come into view, and the services carousel moves with
-   arrows, swipes and the keyboard. Anything already on screen is shown straight away, and visitors
-   who prefer reduced motion see everything still. */
+   arrows, swipes and the keyboard. Visitors who prefer reduced motion see everything still. */
 (function () {
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
@@ -20,23 +19,26 @@
     targets.push(el);
   });
   if (!reduce && "IntersectionObserver" in window) {
-    var vh = window.innerHeight;
-    targets.forEach(function (el) {
-      var r = el.getBoundingClientRect();
-      el.classList.add("reveal");
-      if (r.top < vh * .92 && r.bottom > 0) el.classList.add("in");
-    });
+    targets.forEach(function (el) { el.classList.add("reveal"); });
     // siblings in a row arrive one after another
     document.querySelectorAll(".strip, .offerings, .values, .steps, .gtk").forEach(function (row) {
-      Array.prototype.forEach.call(row.children, function (c, i) { c.style.transitionDelay = Math.min(i, 5) * 90 + "ms"; });
+      Array.prototype.forEach.call(row.children, function (c, i) { c.style.transitionDelay = Math.min(i, 5) * 110 + "ms"; });
     });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
-    }, { rootMargin: "0px 0px -4% 0px", threshold: 0.04 });
-    targets.forEach(function (el) { if (!el.classList.contains("in")) io.observe(el); });
+    }, { threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
   }
+
+  /* ---------- phone menu ---------- */
+  var btn = document.querySelector(".menu-btn"), menu = document.getElementById("mobile-nav");
+  if (btn && menu) btn.addEventListener("click", function () {
+    var open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!open)); btn.textContent = open ? "Menu" : "Close";
+    menu.hidden = open;
+  });
 
   /* ---------- services carousel ---------- */
   document.querySelectorAll("[data-carousel]").forEach(function (root) {
