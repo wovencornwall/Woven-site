@@ -14,16 +14,17 @@ It's a plain website (HTML pages, one stylesheet, photos), hosted free on GitHub
 | `services.html` | Wedding packages and social content for brands |
 | `journal.html` | Journal posts |
 | `contact.html` | Enquiry form |
+| `terms.html` | Terms of booking and privacy notice |
 | `thanks.html` | Page shown after someone sends an enquiry |
 | `404.html` | Page shown for a broken link |
 | `styles.css` | All colours, fonts and layout |
 | `site.js` | Sections fading in as you scroll, and the services carousel |
-| `tex/w.svg` | The W logo on its own (it's also drawn straight into each page's header and footer) |
+| `tex/w.svg`, `tex/w-light.svg` | The soft thread W logo, in sage and in cream for the dark footer |
 | `img/` | Photos |
 | `logo.png` | Zoë's handwritten "Woven" logo |
 | `CNAME` | Tells GitHub the site lives at wovencornwall.com |
 
-Brand colours (in `styles.css`): cream `#FAF8F5`, off-white `#F3EEE7`, warm grey `#D4CEC7`, earthy ink `#2F2B26`, deep sage accent `#4E5A47`. Type: Cormorant Garamond for headings, EB Garamond for text, all serif. Photos and buttons have rounded corners. The logo is a simple serif W whose fine stroke passes over the heavy one, like a thread, with WEDDING PLANNER beneath.
+Brand colours (in `styles.css`): cream `#FAF8F5`, off-white `#F3EEE7`, warm grey `#D4CEC7`, earthy ink `#2F2B26`, deep sage accent `#4E5A47`. Type: Cormorant Garamond for headings, EB Garamond for text, all serif. Photos and buttons have rounded corners. The logo is a soft W drawn as one flowing thread, with WEDDING PLANNER beneath.
 
 
 ## The enquiry form
